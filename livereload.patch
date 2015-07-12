@@ -1,0 +1,13 @@
+--- /usr/lib/python2.7/site-packages/livereload/server.py.fiend 2015-07-11 18:14:27.857400218 +0000
++++ /usr/lib/python2.7/site-packages/livereload/server.py   2015-07-11 18:15:12.823682129 +0000
+@@ -212,9 +212,7 @@
+             (r'/livereload.js', LiveReloadJSHandler)
+         ]
+ 
+-        live_script = escape.utf8((
+-            '<script src="http://{host}:{port}/livereload.js"></script>'
+-        ).format(host=host, port=liveport))
++        live_script = escape.utf8('<script src="/livereload.js"></script>')
+ 
+         web_handlers = self.get_web_handlers(live_script)
+
